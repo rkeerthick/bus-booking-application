@@ -1,12 +1,9 @@
-import React from 'react';
 import './App.css';
-import BusLayout from './components/Bus Layout/BusLayout';
+import Home from './pages/Home.page';
 
 function App() {
   return (
-    <>
-      <BusLayout />
-    </>
+    <Home />
   );
 }
 
