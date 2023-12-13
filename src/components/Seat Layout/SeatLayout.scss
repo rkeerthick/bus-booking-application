@@ -1,0 +1,11 @@
+.seat-layout {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+  
+  &__left, &__right {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+  }
+}
