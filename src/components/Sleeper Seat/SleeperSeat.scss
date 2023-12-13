@@ -1,14 +1,13 @@
-#seat {
-    height: 40px;
-    width: 40px;
-    border-radius: 4px;
+#sleeper-seat {
+    height: 80px;
+    width: 30px;
     border: 2px solid black;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: default;
 }
-
 .booked {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
