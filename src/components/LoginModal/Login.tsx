@@ -9,6 +9,11 @@ const Login = ({ closeLoginModal }: loginProps) => {
     setEmail(value);
   };
 
+  const handleClick = () => {
+    alert(email);
+    closeLoginModal();
+  }
+
   return (
     <div className="login-modal">
       <div className="login-modal__container">
@@ -18,8 +23,8 @@ const Login = ({ closeLoginModal }: loginProps) => {
           value={email}
           onChange={(e: any) => handleChange(e.target.value)}
         />
-        <button onClick={closeLoginModal} type="submit">
-          Submit
+        <button onClick={handleClick} type="submit">
+          Login
         </button>
       </div>
     </div>

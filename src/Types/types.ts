@@ -49,3 +49,7 @@ export type buttonProps = {
 export type loginProps = {
   closeLoginModal: () => void
 };
+
+export type signUpProps = {
+  closeSignupModal: () => void;
+};
