@@ -1,0 +1,19 @@
+.seat-selection {
+    width: 100%;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+
+        &__layout {
+            width: calc(100% - 350px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__total {
+            margin-left: auto;
+        }
+    }
+}

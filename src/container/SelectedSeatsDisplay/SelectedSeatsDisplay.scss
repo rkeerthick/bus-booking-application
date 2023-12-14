@@ -1,0 +1,25 @@
+.selected-seat-display {
+    background-color: rgba($color: #000, $alpha: 0.2);
+    width: 350px;
+    padding: 30px;
+    overflow: scroll;
+    overflow-x: hidden;
+    
+    &__container {
+        height: calc(100vh - 60px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+        &__total-cost {
+            display: flex;
+            justify-content:flex-end;
+            padding: 20px 40px;
+            background-color: rgb(243, 63, 63);
+            margin-inline: 10px;
+            border: none;
+            border-radius: 10px;
+        }
+    }
+}

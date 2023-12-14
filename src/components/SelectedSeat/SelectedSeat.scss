@@ -1,0 +1,27 @@
+.selected-seat {
+  background-color: rgba(#000, 0.2);
+  width: max-content;
+  margin: 10px 0px;
+  padding: 20px 40px;
+  border-radius: 8px;
+  border: 2px solid darkgray;
+
+  &__container {
+    display: flex;
+    gap: 30px;
+
+    &__seat-no {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    &__price {
+      font-size: 17px;
+      font-weight: 700;
+    }
+  }
+}
+
+.price-styles {
+  color: rgb(237, 93, 93);
+}

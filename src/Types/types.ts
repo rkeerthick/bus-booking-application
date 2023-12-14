@@ -1,6 +1,7 @@
 export type seatsObjectProps = {
   seatNo: number;
   isBooked: boolean;
+  price?: number
 };
 
 export type seatsProps = {
@@ -16,7 +17,7 @@ export type seatProps = {
   handleClick: (
     selectedRow: number,
     selectedColumn: string,
-    selectedSeatNo: number
+    selectedSeatNo: number,
   ) => void;
   row: number;
   seats: seatsObjectProps;
@@ -53,3 +54,8 @@ export type loginProps = {
 export type signUpProps = {
   closeSignupModal: () => void;
 };
+
+export type selectedSeatProps = {
+  selectedSeatNo: number,
+  seatPrice: number
+}
