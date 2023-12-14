@@ -1,4 +1,5 @@
-import { seatProps } from "../../Types/types";
+
+import { seatProps } from "../../../Types/types";
 import "./Seat.scss";
 
 const Seat = ({ row, columnNo, seats, handleClick }: seatProps) => {

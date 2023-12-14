@@ -1,29 +1,34 @@
 
-import './SleeperLayout.scss';
-import SleeperSeat from "../Sleeper Seat/SleeperSeat";
-import { seatLayoutProps } from '../../Types/types';
+import './SeatLayout.scss'
+import { seatLayoutProps } from "../../../Types/types";
+import Seat from '../Seat/Seat';
 
 
-
-const SleeperLayout = ({ row, seats, handleClick }: seatLayoutProps) => {
+const SeatLayout = ({ row, seats, handleClick }: seatLayoutProps) => {
   return (
     <div className="seat-layout">
       <div className="seat-layout__left">
-        <SleeperSeat
+        <Seat
           row={row}
           columnNo="l1"
           seats={seats.l1}
           handleClick={handleClick}
         />
+        <Seat
+          row={row}
+          columnNo="l2"
+          seats={seats.l2}
+          handleClick={handleClick}
+        />
       </div>
       <div className="seat-layout__right">
-        <SleeperSeat
+        <Seat
           row={row}
           columnNo="r1"
           seats={seats.r1}
           handleClick={handleClick}
         />
-        <SleeperSeat
+        <Seat
           row={row}
           columnNo="r2"
           seats={seats.r2}
@@ -34,4 +39,4 @@ const SleeperLayout = ({ row, seats, handleClick }: seatLayoutProps) => {
   );
 };
 
-export default SleeperLayout;
+export default SeatLayout;

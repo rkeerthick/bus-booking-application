@@ -1,5 +1,6 @@
 
-import { seatProps } from '../../Types/types';
+
+import { seatProps } from '../../../Types/types';
 import './SleeperSeat.scss'
 
 const SleeperSeat = ({ row, columnNo, seats, handleClick }: seatProps) => {
