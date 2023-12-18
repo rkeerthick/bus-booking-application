@@ -32,71 +32,273 @@
         {
           "row": 1,
           "seats": {
-            "l1": { "seatNo": 1, "isBooked": false },
-            "r1": { "seatNo": 3, "isBooked": false }
+            "l1": { "seatNo": 1, "isBooked": false, "price": 500 },
+            "r1": { "seatNo": 3, "isBooked": false, "price": 500 }
           }
         },
         {
           "row": 2,
           "seats": {
-            "l1": { "seatNo": 5, "isBooked": false },
-            "r1": { "seatNo": 7, "isBooked": false }
+            "l1": { "seatNo": 5, "isBooked": false, "price": 500 },
+            "r1": { "seatNo": 7, "isBooked": false, "price": 500 }
           }
         },
         {
           "row": 3,
           "seats": {
-            "l1": { "seatNo": 9, "isBooked": false },
+            "l1": { "seatNo": 9, "isBooked": false, "price": 500 },
 
-            "r1": { "seatNo": 11, "isBooked": false }
+            "r1": { "seatNo": 11, "isBooked": false, "price": 500 }
           }
         },
         {
           "row": 4,
           "seats": {
-            "l1": { "seatNo": 13, "isBooked": false },
+            "l1": { "seatNo": 13, "isBooked": false, "price": 500 },
 
-            "r1": { "seatNo": 15, "isBooked": false }
+            "r1": { "seatNo": 15, "isBooked": false, "price": 500 }
           }
         },
         {
           "row": 5,
           "seats": {
-            "l1": { "seatNo": 17, "isBooked": false },
+            "l1": { "seatNo": 17, "isBooked": false, "price": 500 },
 
-            "r1": { "seatNo": 19, "isBooked": false }
+            "r1": { "seatNo": 19, "isBooked": false, "price": 500 }
           }
         },
         {
           "row": 6,
           "seats": {
-            "l1": { "seatNo": 21, "isBooked": false },
+            "l1": { "seatNo": 21, "isBooked": false, "price": 500 },
 
-            "r1": { "seatNo": 23, "isBooked": false }
+            "r1": { "seatNo": 23, "isBooked": false, "price": 500 }
           }
         },
         {
           "row": 7,
           "seats": {
-            "l1": { "seatNo": 25, "isBooked": false },
+            "l1": { "seatNo": 25, "isBooked": false, "price": 500 },
 
-            "r1": { "seatNo": 27, "isBooked": false }
+            "r1": { "seatNo": 27, "isBooked": false, "price": 500 }
           }
         },
         {
           "row": 8,
           "seats": {
-            "l1": { "seatNo": 29, "isBooked": false },
+            "l1": { "seatNo": 29, "isBooked": false, "price": 500 },
 
-            "r1": { "seatNo": 31, "isBooked": false }
+            "r1": { "seatNo": 31, "isBooked": false, "price": 500 }
           }
         },
         {
           "row": 9,
           "seats": {
-            "l1": { "seatNo": 33, "isBooked": false },
+            "l1": { "seatNo": 33, "isBooked": false, "price": 500 },
 
-            "r1": { "seatNo": 35, "isBooked": false } 
+            "r1": { "seatNo": 35, "isBooked": false, "price": 500 } 
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "busName": "Sai Travels",
+      "from": "coimbatore",
+      "to": "chennai",
+      "startingTime": "17:30",
+      "depatureTime": "07:00",
+      "boardingPoints": [
+        {
+          "stopping": "point A",
+          "timing": "17:30"
+        },
+        {
+          "stopping": "point B",
+          "timing": "17:55"
+        }
+      ],
+      "dropPoints": [
+        {
+          "stopping": "point C",
+          "timing": "06:50"
+        },
+        {
+          "stopping": "Point D",
+          "timing": "07:00"
+        }
+      ],
+      "availableSeats": 40,
+      "seatLayout": [
+        {
+          "row": 1,
+          "seats": {
+            "l1": { "seatNo": 1, "isBooked": false, "price": 456 },
+            "r1": { "seatNo": 3, "isBooked": false, "price": 456 }
+          }
+        },
+        {
+          "row": 2,
+          "seats": {
+            "l1": { "seatNo": 5, "isBooked": false, "price": 456 },
+            "r1": { "seatNo": 7, "isBooked": false, "price": 456 }
+          }
+        },
+        {
+          "row": 3,
+          "seats": {
+            "l1": { "seatNo": 9, "isBooked": false, "price": 456 },
+
+            "r1": { "seatNo": 11, "isBooked": false, "price": 456 }
+          }
+        },
+        {
+          "row": 4,
+          "seats": {
+            "l1": { "seatNo": 13, "isBooked": false, "price": 456 },
+
+            "r1": { "seatNo": 15, "isBooked": false, "price": 456 }
+          }
+        },
+        {
+          "row": 5,
+          "seats": {
+            "l1": { "seatNo": 17, "isBooked": false, "price": 456 },
+
+            "r1": { "seatNo": 19, "isBooked": false, "price": 456 }
+          }
+        },
+        {
+          "row": 6,
+          "seats": {
+            "l1": { "seatNo": 21, "isBooked": false, "price": 456 },
+
+            "r1": { "seatNo": 23, "isBooked": false, "price": 456 }
+          }
+        },
+        {
+          "row": 7,
+          "seats": {
+            "l1": { "seatNo": 25, "isBooked": false, "price": 456 },
+
+            "r1": { "seatNo": 27, "isBooked": false, "price": 456 }
+          }
+        },
+        {
+          "row": 8,
+          "seats": {
+            "l1": { "seatNo": 29, "isBooked": false, "price": 456 },
+
+            "r1": { "seatNo": 31, "isBooked": false, "price": 456 }
+          }
+        },
+        {
+          "row": 9,
+          "seats": {
+            "l1": { "seatNo": 33, "isBooked": false, "price": 456 },
+
+            "r1": { "seatNo": 35, "isBooked": false, "price": 456 }
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "busName": "FE Travels",
+      "from": "bangalore",
+      "to": "chennai",
+      "startingTime": "08:00",
+      "depatureTime": "16:45",
+      "boardingPoints": [
+        {
+          "stopping": "point A",
+          "timing": "08:00"
+        },
+        {
+          "stopping": "point B",
+          "timing": "08:24"
+        }
+      ],
+      "dropPoints": [
+        {
+          "stopping": "point C",
+          "timing": "16:10"
+        },
+        {
+          "stopping": "Point D",
+          "timing": "16:45"
+        }
+      ],
+      "availableSeats": 40,
+      "seatLayout": [
+        {
+          "row": 1,
+          "seats": {
+            "l1": { "seatNo": 1, "isBooked": false, "price": 768 },
+            "r1": { "seatNo": 3, "isBooked": false, "price": 768 }
+          }
+        },
+        {
+          "row": 2,
+          "seats": {
+            "l1": { "seatNo": 5, "isBooked": false, "price": 768 },
+            "r1": { "seatNo": 7, "isBooked": false, "price": 768 }
+          }
+        },
+        {
+          "row": 3,
+          "seats": {
+            "l1": { "seatNo": 9, "isBooked": false, "price": 768 },
+
+            "r1": { "seatNo": 11, "isBooked": false, "price": 768 }
+          }
+        },
+        {
+          "row": 4,
+          "seats": {
+            "l1": { "seatNo": 13, "isBooked": false, "price": 768 },
+
+            "r1": { "seatNo": 15, "isBooked": false, "price": 768 }
+          }
+        },
+        {
+          "row": 5,
+          "seats": {
+            "l1": { "seatNo": 17, "isBooked": false, "price": 768 },
+
+            "r1": { "seatNo": 19, "isBooked": false, "price": 768 }
+          }
+        },
+        {
+          "row": 6,
+          "seats": {
+            "l1": { "seatNo": 21, "isBooked": false, "price": 768 },
+
+            "r1": { "seatNo": 23, "isBooked": false, "price": 768 }
+          }
+        },
+        {
+          "row": 7,
+          "seats": {
+            "l1": { "seatNo": 25, "isBooked": false, "price": 768 },
+
+            "r1": { "seatNo": 27, "isBooked": false, "price": 768 }
+          }
+        },
+        {
+          "row": 8,
+          "seats": {
+            "l1": { "seatNo": 29, "isBooked": false, "price": 768 },
+
+            "r1": { "seatNo": 31, "isBooked": false, "price": 768 }
+          }
+        },
+        {
+          "row": 9,
+          "seats": {
+            "l1": { "seatNo": 33, "isBooked": false, "price": 768 },
+
+            "r1": { "seatNo": 35, "isBooked": false, "price": 768 }
           }
         }
       ]

@@ -1,10 +1,16 @@
 import "./SeatSelectionPage.scss";
 import VolvoSeater from "../UI/Volvo Seater/Bus Layout/BusLayout";
 import SelectedSeatsDisplay from "../container/SelectedSeatsDisplay/SelectedSeatsDisplay";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { columnProps, selectedSeatTypeProps } from "../Types/types";
+import { fetchBuses } from "../apis/apis";
+import { useQuery } from "@tanstack/react-query";
+import allBus from "../store/allBusesStore";
+import { toJS } from "mobx";
+import { observer } from "mobx-react-lite";
 
-const SeatSelectionPage = () => {
+const SeatSelectionPage = observer(() => {
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selectedSeat, setSelectedSeat] = useState<selectedSeatTypeProps[]>([]);
   const [rows, setRows] = useState<columnProps[]>([
@@ -130,22 +136,23 @@ const SeatSelectionPage = () => {
   };
 
   return (
+    
     <div className="seat-selection">
-      <div className="seat-selection__container">
-        <div className="seat-selection__container__layout">
-          <VolvoSeater rows={rows} handleClick={handleClick} />
-        </div>
-        <div className="seat-selection__container__total">
-          <SelectedSeatsDisplay
-            selectedSeats={selectedSeat}
-            isOpen={isOpen}
-            openModal={openModal}
-            closeModal={closeModal}
+    <div className="seat-selection__container">
+      <div className="seat-selection__container__layout">
+        <VolvoSeater rows={rows} handleClick={handleClick} />
+      </div>
+      <div className="seat-selection__container__total">
+        <SelectedSeatsDisplay
+          selectedSeats={selectedSeat}
+          isOpen={isOpen}
+          openModal={openModal}
+          closeModal={closeModal}
           />
-        </div>
       </div>
     </div>
-  );
-};
+  </div>
+)
+})
 
 export default SeatSelectionPage;

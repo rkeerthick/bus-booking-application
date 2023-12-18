@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
 import "./App.css";
 import BusLayout from "./UI/Standard Seater/Bus Layout/BusLayout";
 import SleeperBusLayout from "./UI/Standard Sleeper/SleeperBusLayout/SleeperBusLayout";
@@ -7,18 +8,26 @@ import SelectedSeat from "./components/SelectedSeat/SelectedSeat";
 import SelectedSeatsDisplay from "./container/SelectedSeatsDisplay/SelectedSeatsDisplay";
 import Home from "./pages/Home.page";
 import SeatSelectionPage from "./pages/SeatSelectionPage.page";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { fetchBuses } from "./apis/apis";
+import allBus from "./store/allBusesStore";
 
+const queryClient = new QueryClient();
 function App() {
+  
   return (
     <>
-      <Home />
-      {/* <BusLayout />
+      <QueryClientProvider client={queryClient}>
+        <Home />
+        {/* <BusLayout />
       <SleeperBusLayout />
       <VolvoSeater />
-      <VolvoSleeperBusLayout /> */}
-      {/* <SelectedSeat selectedSeatNo={12} seatPrice={548} /> */}
-      {/* <SelectedSeatsDisplay /> */}
-      {/* <SeatSelectionPage /> */}
+    <VolvoSleeperBusLayout /> */}
+        {/* <SelectedSeat selectedSeatNo={12} seatPrice={548} /> */}
+        {/* <SelectedSeatsDisplay /> */}
+        {/* <SeatSelectionPage /> */}
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </>
   );
 }

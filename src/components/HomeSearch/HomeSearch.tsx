@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./HomeSearch.scss";
 import { IoIosSwap } from "react-icons/io";
+import { useQuery } from "@tanstack/react-query";
+import { fetchSpecificBus } from "../../apis/apis";
 
 const HomeSearch = () => {
   const [fromPlace, setFromPlace] = useState("");
@@ -26,6 +28,16 @@ const HomeSearch = () => {
   //   });
   // };
 
+  const { data, refetch } = useQuery({
+    queryKey: ["specific bus"],
+    queryFn: () => fetchSpecificBus(fromPlace, toPlace),
+  });
+
+  const HandleClick = () => {
+    refetch();
+  }
+  console.log(data?.data);
+
   return (
     <div className="home-search">
       <div className="home-search__container">
@@ -33,7 +45,7 @@ const HomeSearch = () => {
           <IoIosSwap />
         </div> */}
         <input
-          onChange={(e: any) => handleFromPlace(e.target.valu)}
+          onChange={(e: any) => handleFromPlace(e.target.value)}
           value={fromPlace}
           className="home-search__container__starting"
           type="text"
@@ -47,7 +59,7 @@ const HomeSearch = () => {
           placeholder="To"
         />
         <input type="date" />
-        <button className="home-search__container__ending" type="button">
+        <button className="home-search__container__ending" type="button" onClick={HandleClick}>
           Search
         </button>
       </div>
