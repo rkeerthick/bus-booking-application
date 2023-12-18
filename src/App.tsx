@@ -11,14 +11,14 @@ import SeatSelectionPage from "./pages/SeatSelectionPage.page";
 function App() {
   return (
     <>
-      {/* <Home /> */}
+      <Home />
       {/* <BusLayout />
       <SleeperBusLayout />
       <VolvoSeater />
       <VolvoSleeperBusLayout /> */}
       {/* <SelectedSeat selectedSeatNo={12} seatPrice={548} /> */}
       {/* <SelectedSeatsDisplay /> */}
-      <SeatSelectionPage />
+      {/* <SeatSelectionPage /> */}
     </>
   );
 }

@@ -1,4 +1,3 @@
-
 export type seatsObjectProps = {
   seatNo: number;
   isBooked: boolean;
@@ -80,8 +79,12 @@ export type busLayoutProp = {
   ) => void;
 };
 
-
 export type selectedSeatTypeProps = {
   selectedSeatNo: number;
   seatPrice: number;
+};
+
+export type inputProps = {
+  type: "text" | "email" | "number";
+  placeholder: string;
 };

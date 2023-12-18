@@ -1,46 +1,55 @@
-import './SignUpModal.scss'
-import React, { useState } from "react";
+import "./SignUpModal.scss";
+import React, { useRef } from "react";
 import { signUpProps } from "../../Types/types";
+import Input from "../Input/Input";
 
-const SignUpModal = ({closeSignupModal}: signUpProps) => {
-  const [userName, setUserName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+const SignUpModal = ({ closeSignupModal }: signUpProps) => {
+  const userNameRef: any = useRef();
+  const emailRef: any = useRef();
+  const phoneNumberRef: any = useRef();
 
-  const handleUserName = (value: string) => {
-    setUserName(value);
+  const handleSubmit = () => {
+    console.log(
+      userNameRef.current.value,
+      emailRef.current.value,
+      phoneNumberRef.current.value
+    );
+    closeSignupModal();
   };
 
-  const handleEmail = (value: string) => {
-    setEmail(value);
-  };
-
-  const handlePhoneNumber = (value: string) => {
-    setPhoneNumber(value);
-  };
+  const datas = [
+    { placeholder: "Username", id: "username", type: "text", ref: userNameRef },
+    {
+      placeholder: "Email address",
+      id: "email",
+      type: "email",
+      errorMessage: "Please enter a valid email address",
+      ref: emailRef,
+    },
+    {
+      placeholder: "Phone Number",
+      id: "phoneNumber",
+      type: "text",
+      ref: phoneNumberRef,
+    },
+  ];
 
   return (
     <div className="signup-modal">
       <div className="signup-modal__container">
-        <input
-          type="text"
-          placeholder="User Name"
-          value={userName}
-          onChange={(e: any) => handleUserName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Email"
-          value={email}
-          onChange={(e: any) => handleEmail(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Phone Number"
-          value={phoneNumber}
-          onChange={(e: any) => handlePhoneNumber(e.target.value)}
-        />
-        <button onClick={closeSignupModal} type="button">Sign Up</button>
+        <>
+          {datas.map((data: any) => (
+            <Input
+              key={data.id}
+              type={data.type}
+              placeholder={data.placeholder}
+              ref={data.ref}
+            />
+          ))}
+          <button onClick={handleSubmit} type="button">
+            Sign Up
+          </button>
+        </>
       </div>
     </div>
   );

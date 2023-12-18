@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Modal from "../../modal/Modal";
 import Button from "../Button/Button";
-import Login from "../LoginModal/Login";
+
 import "./Header.scss";
 import SignUpModal from "../SignUpModal/SignUpModal";
+import LoginModal from "../LoginModal/LoginModal";
 
 const Header = () => {
   const [loginModal, setLoginModal] = useState(false);
@@ -19,7 +20,7 @@ const Header = () => {
   return (
     <>
       <Modal toggleModal={handleLoginModal} isOpen={loginModal}>
-        <Login closeLoginModal={handleLoginModal} />
+        <LoginModal closeLoginModal={handleLoginModal} />
       </Modal>
       <Modal toggleModal={handleSignupModal} isOpen={signupModal}>
         <SignUpModal closeSignupModal={handleSignupModal} />
