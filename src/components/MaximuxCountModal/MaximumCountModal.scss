@@ -1,0 +1,24 @@
+.max-count-modal {
+  background-color: rgb(254, 109, 37);
+  height: max-content;
+  padding: 20px 5px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__button {
+    width: max-content;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+}

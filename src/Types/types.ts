@@ -1,7 +1,8 @@
+
 export type seatsObjectProps = {
   seatNo: number;
   isBooked: boolean;
-  price?: number
+  price?: number;
 };
 
 export type seatsProps = {
@@ -18,6 +19,7 @@ export type seatProps = {
     selectedRow: number,
     selectedColumn: string,
     selectedSeatNo: number,
+    seatPrice?: number | undefined
   ) => void;
   row: number;
   seats: seatsObjectProps;
@@ -28,17 +30,17 @@ export type seatLayoutProps = {
   handleClick: (
     selectedRow: number,
     selectedColumn: string,
-    selectedSeatNo: number
+    selectedSeatNo: number,
+    seatPrice?: number | undefined
   ) => void;
   row: number;
   seats: any;
 };
 
-
 export type modalProps = {
   children: JSX.Element;
   isOpen?: boolean;
-  toggleModal: () => void
+  toggleModal: () => void;
 };
 
 export type buttonProps = {
@@ -48,7 +50,7 @@ export type buttonProps = {
 };
 
 export type loginProps = {
-  closeLoginModal: () => void
+  closeLoginModal: () => void;
 };
 
 export type signUpProps = {
@@ -56,6 +58,30 @@ export type signUpProps = {
 };
 
 export type selectedSeatProps = {
-  selectedSeatNo: number,
-  seatPrice: number
-}
+  selectedSeats: selectedSeatTypes[];
+  isOpen: boolean;
+  openModal: () => void;
+  closeModal: () => void;
+};
+
+export type selectedSeatTypes = {
+  seatPrice?: number | undefined;
+  selectedSeatNo?: number | undefined;
+  helperText?: string;
+};
+
+export type busLayoutProp = {
+  rows: columnProps[];
+  handleClick: (
+    selectedRow: number,
+    selectedColumn: string,
+    selectedSeatNo: number,
+    seatPrice: number | undefined
+  ) => void;
+};
+
+
+export type selectedSeatTypeProps = {
+  selectedSeatNo: number;
+  seatPrice: number;
+};

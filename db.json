@@ -1,0 +1,105 @@
+{
+  "buses": [
+    {
+      "id": 1,
+      "busName": "SK Travels",
+      "from": "coimbatore",
+      "to": "bangalore",
+      "startingTime": "11:30",
+      "depatureTime": "22:00",
+      "boardingPoints": [
+        {
+          "stopping": "point A",
+          "timing": "11:30"
+        },
+        {
+          "stopping": "point B",
+          "timing": "11:55"
+        }
+      ],
+      "dropPoints": [
+        {
+          "stopping": "point C",
+          "timing": "21:50"
+        },
+        {
+          "stopping": "Point D",
+          "timing": "22:00"
+        }
+      ],
+      "availableSeats": 40,
+      "seatLayout": [
+        {
+          "row": 1,
+          "seats": {
+            "l1": { "seatNo": 1, "isBooked": false },
+            "r1": { "seatNo": 3, "isBooked": false }
+          }
+        },
+        {
+          "row": 2,
+          "seats": {
+            "l1": { "seatNo": 5, "isBooked": false },
+            "r1": { "seatNo": 7, "isBooked": false }
+          }
+        },
+        {
+          "row": 3,
+          "seats": {
+            "l1": { "seatNo": 9, "isBooked": false },
+
+            "r1": { "seatNo": 11, "isBooked": false }
+          }
+        },
+        {
+          "row": 4,
+          "seats": {
+            "l1": { "seatNo": 13, "isBooked": false },
+
+            "r1": { "seatNo": 15, "isBooked": false }
+          }
+        },
+        {
+          "row": 5,
+          "seats": {
+            "l1": { "seatNo": 17, "isBooked": false },
+
+            "r1": { "seatNo": 19, "isBooked": false }
+          }
+        },
+        {
+          "row": 6,
+          "seats": {
+            "l1": { "seatNo": 21, "isBooked": false },
+
+            "r1": { "seatNo": 23, "isBooked": false }
+          }
+        },
+        {
+          "row": 7,
+          "seats": {
+            "l1": { "seatNo": 25, "isBooked": false },
+
+            "r1": { "seatNo": 27, "isBooked": false }
+          }
+        },
+        {
+          "row": 8,
+          "seats": {
+            "l1": { "seatNo": 29, "isBooked": false },
+
+            "r1": { "seatNo": 31, "isBooked": false }
+          }
+        },
+        {
+          "row": 9,
+          "seats": {
+            "l1": { "seatNo": 33, "isBooked": false },
+
+            "r1": { "seatNo": 35, "isBooked": false } 
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,16 +1,8 @@
-import { useState } from "react";
 import "./BusLayout.scss";
-import { columnProps } from "../../../Types/types";
+import { busLayoutProp } from "../../../Types/types";
 import SeatLayout from "../Seat Layout/SeatLayout";
 
-export type busLayoutProp = {
-  rows: columnProps[];
-  handleClick: (
-    selectedRow: number,
-    selectedColumn: string,
-    selectedSeatNo: number
-  ) => void;
-}
+
 
 const VolvoSeater = ({rows, handleClick}: busLayoutProp) => {
   // const [rows, setRows] = useState<columnProps[]>([
@@ -126,3 +118,4 @@ const VolvoSeater = ({rows, handleClick}: busLayoutProp) => {
 };
 
 export default VolvoSeater;
+

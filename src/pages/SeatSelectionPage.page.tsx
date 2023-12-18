@@ -2,15 +2,11 @@ import "./SeatSelectionPage.scss";
 import VolvoSeater from "../UI/Volvo Seater/Bus Layout/BusLayout";
 import SelectedSeatsDisplay from "../container/SelectedSeatsDisplay/SelectedSeatsDisplay";
 import { useState } from "react";
-import { columnProps } from "../Types/types";
-
-export type selectedSeatTypeProps = {
-  selectedSeatNo: number,
-  seatPrice: number,
-}
+import { columnProps, selectedSeatTypeProps } from "../Types/types";
 
 const SeatSelectionPage = () => {
-  let selectedSeat = {} as selectedSeatTypeProps;
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selectedSeat, setSelectedSeat] = useState<selectedSeatTypeProps[]>([]);
   const [rows, setRows] = useState<columnProps[]>([
     {
       row: 1,
@@ -83,31 +79,56 @@ const SeatSelectionPage = () => {
       },
     },
   ]);
-  
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   const handleClick = (
     selectedRow: number,
     selectedColumn: string,
-    selectedSeatNo: number
+    selectedSeatNo: number,
+    seatPrice: number | undefined
   ): void => {
-    // selectedSeat = { selectedSeatNo,  }
-    const updatedRow = rows.map((row) => {
-      if (row.row === selectedRow) {
-        return {
-          ...row,
-          seats: {
-            ...row.seats,
-            [selectedColumn]: {
-              ...row.seats[selectedColumn],
-              seatNo: selectedSeatNo,
-              isBooked: !row.seats[selectedColumn]?.isBooked,
+    const isContains = selectedSeat.some(
+      (prev: selectedSeatTypeProps) => prev.selectedSeatNo === selectedSeatNo
+    );
+    if (isContains) {
+      const filteredArray = selectedSeat.filter(
+        (prev: selectedSeatTypeProps) => prev.selectedSeatNo !== selectedSeatNo
+      );
+      setSelectedSeat(filteredArray);
+    } else if (selectedSeat.length < 4) {
+      setSelectedSeat((prev: any) => [...prev, { selectedSeatNo, seatPrice }]);
+    } else {
+      openModal();
+    }
+
+    if (isContains || selectedSeat.length <= 3) {
+      const updatedRow = rows.map((row) => {
+        if (row.row === selectedRow) {
+          return {
+            ...row,
+            seats: {
+              ...row.seats,
+              [selectedColumn]: {
+                ...row.seats[selectedColumn],
+                seatNo: selectedSeatNo,
+                isBooked: !row.seats[selectedColumn]?.isBooked,
+              },
             },
-          },
-        };
-      }
-      return row;
-    });
-    setRows(updatedRow);
+          };
+        }
+        return row;
+      });
+      setRows(updatedRow);
+    }
   };
+
   return (
     <div className="seat-selection">
       <div className="seat-selection__container">
@@ -116,8 +137,10 @@ const SeatSelectionPage = () => {
         </div>
         <div className="seat-selection__container__total">
           <SelectedSeatsDisplay
-            seatPrice={567}
-            selectedSeatNo={selectedSeat.selectedSeatNo}
+            selectedSeats={selectedSeat}
+            isOpen={isOpen}
+            openModal={openModal}
+            closeModal={closeModal}
           />
         </div>
       </div>

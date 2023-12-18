@@ -1,39 +1,50 @@
 import "./SelectedSeatsDisplay.scss";
 import SelectedSeat from "../../components/SelectedSeat/SelectedSeat";
-import { selectedSeatProps } from "../../Types/types";
+import { selectedSeatProps, selectedSeatTypes } from "../../Types/types";
+import Modal from "../../modal/Modal";
+import MaximumCountModal from "../../components/MaximuxCountModal/MaximumCountModal";
 
-let totalPrice: number = 0;
+const SelectedSeatsDisplay = ({
+  selectedSeats,
+  isOpen,
+  closeModal,
+}: selectedSeatProps) => {
+  let totalPrice: number = 0;
 
-const obj = [
-  { selectedSeatNo: 12, seatPrice: 576 },
-  { selectedSeatNo: 12, seatPrice: 576 },
-  { selectedSeatNo: 12, seatPrice: 576 },
-];
+  const calculateTotal = (price: number | undefined) => {
+    price && (totalPrice += price);
+  };
 
-const calculateTotal = (price: number) => {
-    totalPrice += price
-}
-
-const SelectedSeatsDisplay = ({selectedSeatNo, seatPrice}: selectedSeatProps) => {
   return (
-    <div className="selected-seat-display">
-      <div className="selected-seat-display__container">
-        <div className="selected-seat-display__container__seat-section">
-          {obj.map((data) => {
-            calculateTotal(data.seatPrice);
-            return (
-              <SelectedSeat
-                seatPrice={data.seatPrice}
-                selectedSeatNo={data.selectedSeatNo}
-              />
-            );
-          })}
-        </div>
-        <div className="selected-seat-display__container__total-cost">
-          Total Price : ₹{totalPrice}
+    <>
+      <Modal toggleModal={closeModal} isOpen={isOpen}>
+        <MaximumCountModal closeModal={closeModal} />
+      </Modal>
+      <div className="selected-seat-display">
+        <div className="selected-seat-display__container">
+          <div className="selected-seat-display__container__seat-section">
+            {selectedSeats.length === 0 ? (
+              <SelectedSeat helperText="Please book your seat" />
+            ) : (
+              selectedSeats.map((data: selectedSeatTypes) => {
+                calculateTotal(data.seatPrice);
+                return (
+                  <SelectedSeat
+                    seatPrice={data.seatPrice}
+                    selectedSeatNo={data.selectedSeatNo}
+                  />
+                );
+              })
+            )}
+          </div>
+          {selectedSeats.length !== 0 && (
+            <div className="selected-seat-display__container__total-cost">
+              Total Price : ₹{totalPrice}
+            </div>
+          )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
