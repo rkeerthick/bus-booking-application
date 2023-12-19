@@ -88,3 +88,10 @@ export type inputProps = {
   type: "text" | "email" | "number";
   placeholder: string;
 };
+
+export type outlinedButtonProps = {
+  type: "button" | "submit" | undefined;
+  isClicked: boolean;
+  children: string;
+  handleClick?: () => void;
+};

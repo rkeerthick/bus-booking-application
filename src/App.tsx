@@ -11,6 +11,8 @@ import SeatSelectionPage from "./pages/SeatSelectionPage.page";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { fetchBuses } from "./apis/apis";
 import allBus from "./store/allBusesStore";
+import BusCard from "./components/BusCard/BusCard";
+import AvailableBuses from "./pages/Available Buses/AvailableBuses.page";
 
 const queryClient = new QueryClient();
 function App() {
@@ -18,7 +20,7 @@ function App() {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <Home />
+        {/* <Home /> */}
         {/* <BusLayout />
       <SleeperBusLayout />
       <VolvoSeater />
@@ -26,6 +28,7 @@ function App() {
         {/* <SelectedSeat selectedSeatNo={12} seatPrice={548} /> */}
         {/* <SelectedSeatsDisplay /> */}
         {/* <SeatSelectionPage /> */}
+        <AvailableBuses />
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>

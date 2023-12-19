@@ -1,0 +1,12 @@
+.bus-type {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+
+    button {
+      padding: 3px 15px;
+    }
+  }
+}

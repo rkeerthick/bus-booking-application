@@ -1,0 +1,23 @@
+.available-buses {
+    width: 100%;
+
+    
+    &__container {
+        display: flex;
+
+        &__filters {
+            width: 500px;
+            height: 100vh;
+            box-shadow: 5px -3px 10px gray;
+            // padding: 0 30px;
+        }
+
+        &__list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: max-content;
+        }
+    }
+}
