@@ -11,7 +11,7 @@ import DummyLayout from "../UI/Dummy/DummyLayout";
 
 const SeatSelectionPage = observer(() => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedSeat, setSelectedSeat] = useState<selectedSeatTypeProps[]>([]);
+  // const [selectedSeat, setSelectedSeat] = useState<selectedSeatTypeProps[]>([]);
 
   const [selectedSeats, setSelectedSeats] = useState<any>([]);
 
@@ -45,6 +45,9 @@ const SeatSelectionPage = observer(() => {
       ]);
     }
   };
+
+  const selectedSeat = selectedSeats.map((item: any) => item.seatNo);
+  console.log(selectedSeat, 'selectedSeat');
 
   return (
     <div className="seat-selection">
