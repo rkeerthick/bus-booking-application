@@ -1,7 +1,9 @@
 import React from "react";
 import "./BusCard.scss";
+import { useNavigate } from "react-router-dom";
 
 const BusCard = () => {
+  const navigate = useNavigate();
   const data = {
     busName: "FE Travels",
     from: "bangalore",
@@ -13,7 +15,7 @@ const BusCard = () => {
   };
 
   return (
-    <div className="bus-card">
+    <div className="bus-card" onClick={() => navigate("/busLayout")}>
       <div className="bus-card__container">
         <div className="bus-card__container__left">
           <span className="from-place">{data.from}</span>

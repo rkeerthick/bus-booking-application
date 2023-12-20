@@ -3,10 +3,13 @@ import "./HomeSearch.scss";
 import { IoIosSwap } from "react-icons/io";
 import { useQuery } from "@tanstack/react-query";
 import { fetchSpecificBus } from "../../apis/apis";
+import { useNavigate } from "react-router-dom";
 
 const HomeSearch = () => {
   const [fromPlace, setFromPlace] = useState("");
   const [toPlace, setToPlace] = useState("");
+
+  const navigate = useNavigate();
 
   const handleFromPlace = (value: string) => {
     setFromPlace(value);
@@ -35,6 +38,8 @@ const HomeSearch = () => {
 
   const HandleClick = () => {
     refetch();
+    navigate("/displayBuses");
+    
   }
   console.log(data?.data);
 

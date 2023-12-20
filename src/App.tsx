@@ -1,4 +1,8 @@
-import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query";
 import "./App.css";
 import BusLayout from "./UI/Standard Seater/Bus Layout/BusLayout";
 import SleeperBusLayout from "./UI/Standard Sleeper/SleeperBusLayout/SleeperBusLayout";
@@ -13,10 +17,10 @@ import { fetchBuses } from "./apis/apis";
 import allBus from "./store/allBusesStore";
 import BusCard from "./components/BusCard/BusCard";
 import AvailableBuses from "./pages/Available Buses/AvailableBuses.page";
+import Routing from "./Routing/Routing";
 
 const queryClient = new QueryClient();
 function App() {
-  
   return (
     <>
       <QueryClientProvider client={queryClient}>
@@ -28,7 +32,8 @@ function App() {
         {/* <SelectedSeat selectedSeatNo={12} seatPrice={548} /> */}
         {/* <SelectedSeatsDisplay /> */}
         {/* <SeatSelectionPage /> */}
-        <AvailableBuses />
+        {/* <AvailableBuses /> */}
+        <Routing />
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>
