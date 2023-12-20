@@ -1,0 +1,71 @@
+[
+  {
+    "id": "6581677aa3fe807e87b6b5b7",
+    "name": "A",
+    "totalSeats": 40,
+    "seat": {
+      "seatType": "seater",
+      "seatRange": "1-40",
+      "price": {
+        "adultPrice": 850.0,
+        "childPrice": 650.0
+      }
+    },
+    "journeys": [
+      {
+        "id": "dac3d302-fbed-4c63-81e4-2c3ee5442ca1",
+        "boardingPoint": "KanniyaKumari",
+        "endPoint": "Tirupur",
+        "startTime": "19:30:00",
+        "endTime": "04:30:00",
+        "createdDate": "2023-12-19T09:50:50.422+00:00",
+        "lastModifiedDate": "2023-12-19T09:50:50.422+00:00"
+      },
+      {
+        "id": "fcd48b6c-344e-42cf-b354-d5855cb28096",
+        "boardingPoint": "Tirupur",
+        "endPoint": "KanniyaKumari",
+        "startTime": "22:30:00",
+        "endTime": "07:30:00",
+        "createdDate": "2023-12-19T09:50:50.436+00:00",
+        "lastModifiedDate": "2023-12-19T09:50:50.436+00:00"
+      }
+    ],
+    "createdDate": "2023-12-19T09:50:50.469+00:00",
+    "lastModifiedDate": "2023-12-19T09:50:50.469+00:00"
+  },{
+    "id": "6581677aa3fe807e87b6b5b7",
+    "name": "A",
+    "totalSeats": 40,
+    "seat": {
+      "seatType": "seater",
+      "seatRange": "1-40",
+      "price": {
+        "adultPrice": 850.0,
+        "childPrice": 650.0
+      }
+    },
+    "journeys": [
+      {
+        "id": "dac3d302-fbed-4c63-81e4-2c3ee5442ca1",
+        "boardingPoint": "KanniyaKumari",
+        "endPoint": "Tirupur",
+        "startTime": "19:30:00",
+        "endTime": "04:30:00",
+        "createdDate": "2023-12-19T09:50:50.422+00:00",
+        "lastModifiedDate": "2023-12-19T09:50:50.422+00:00"
+      },
+      {
+        "id": "fcd48b6c-344e-42cf-b354-d5855cb28096",
+        "boardingPoint": "Tirupur",
+        "endPoint": "KanniyaKumari",
+        "startTime": "22:30:00",
+        "endTime": "07:30:00",
+        "createdDate": "2023-12-19T09:50:50.436+00:00",
+        "lastModifiedDate": "2023-12-19T09:50:50.436+00:00"
+      }
+    ],
+    "createdDate": "2023-12-19T09:50:50.469+00:00",
+    "lastModifiedDate": "2023-12-19T09:50:50.469+00:00"
+  }
+]

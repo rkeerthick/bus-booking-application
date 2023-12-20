@@ -2,8 +2,14 @@ import { action, makeObservable, observable } from "mobx";
 import { makePersistable } from "mobx-persist-store";
 import { allBusesType } from "../Types/allBusesStoreType";
 
+export interface journeyDetailsType {
+  boardingPoint: string;
+  endPoint: string;
+  travelDate: Date;
+}
+
 class journeyStore {
-    journey: {} = {}
+    journey: journeyDetailsType = {} as journeyDetailsType
 
   constructor() {
     makeObservable(this, {
@@ -17,7 +23,8 @@ class journeyStore {
     });
   }
 
-  setJourneyDetails(data: any) {
+    setJourneyDetails(data: any) {
+      debugger
     this.journey = data;
   }
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./HomeSearch.scss";
 // import { IoIosSwap } from "react-icons/io";
 import { useQuery } from "@tanstack/react-query";
@@ -7,6 +7,9 @@ import { useNavigate } from "react-router-dom";
 import journeyDetails from "../../store/journeyStore";
 
 const HomeSearch = () => {
+  useEffect(() => {
+    localStorage.clear();
+  })
   const [fromPlace, setFromPlace] = useState("");
   const [toPlace, setToPlace] = useState("");
   const [bookingDate, setBookingDate] = useState(new Date());
@@ -45,9 +48,9 @@ const HomeSearch = () => {
   const HandleClick = () => {
     refetch();
     journeyDetails.setJourneyDetails({
-      boardingPoint: "Coimbatore",
-      endPoint: "Bangalore",
-      travelDate: "2023-12-24",
+      boardingPoint: fromPlace,
+      endPoint: toPlace,
+      travelDate: bookingDate,
     });
     navigate("/displayBuses");
   };

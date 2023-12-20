@@ -35,3 +35,30 @@
         }
     }
 }
+
+.bus-name-container {
+    border-radius: 25px;
+    padding: 20px 30px;
+    background-color: #7b3737;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.bus-name {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.available-seats {
+    background-color: rgb(232, 178, 178);
+    border-radius: 25px;
+    padding: 20px 30px;
+    margin-bottom: 10px;
+
+}
+
+.seats {
+
+    font-size: 18px;
+    font-weight: 700;
+}
