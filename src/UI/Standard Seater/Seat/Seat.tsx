@@ -1,14 +1,21 @@
-
 import { seatProps } from "../../../Types/types";
 import "./Seat.scss";
 
-const Seat = ({ row, columnNo, seats, handleClick }: seatProps) => {
+const Seat = ({ seat, isBooked, price, handleSeatSelection }: seatProps) => {
   return (
+    // <div
+    //   className={seats.isBooked ? "booked" : ""}
+    //   onClick={() => handleClick(row, columnNo, seats.seatNo, seats.price)}
+    //   id="seat"
+    // >{ seats.seatNo }</div>
+
     <div
-      className={seats.isBooked ? "booked" : ""}
-      onClick={() => handleClick(row, columnNo, seats.seatNo, seats.price)}
+      className={isBooked ? "booked" : ""}
+      onClick={() => handleSeatSelection(seat, price)}
       id="seat"
-    >{ seats.seatNo }</div>
+    >
+      {seat}
+    </div>
   );
 };
 

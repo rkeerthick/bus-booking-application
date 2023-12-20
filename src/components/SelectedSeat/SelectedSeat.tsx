@@ -2,8 +2,8 @@ import "./SelectedSeat.scss";
 import { selectedSeatTypes } from "../../Types/types";
 
 const SelectedSeat = ({
-  selectedSeatNo,
-  seatPrice,
+  seatNo,
+  price,
   helperText,
 }: selectedSeatTypes) => {
   return (
@@ -14,10 +14,10 @@ const SelectedSeat = ({
         ) : (
           <>
             <span className="selected-seat__container__seat-no">
-              Seat No : {selectedSeatNo}
+              Seat No : {seatNo}
             </span>
             <span className="selected-seat__container__price">
-              Price : <span className="price-styles">₹{seatPrice}</span>
+              Price : <span className="price-styles">₹{price}</span>
             </span>
           </>
         )}

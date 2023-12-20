@@ -14,15 +14,18 @@ export type columnProps = {
 };
 
 export type seatProps = {
-  handleClick: (
-    selectedRow: number,
-    selectedColumn: string,
-    selectedSeatNo: number,
-    seatPrice?: number | undefined
-  ) => void;
-  row: number;
-  seats: seatsObjectProps;
-  columnNo: string;
+  // handleClick: (
+  //   selectedRow: number,
+  //   selectedColumn: string,
+  //   selectedSeatNo: number,
+  //   seatPrice?: number | undefined
+  // ) => void;
+  handleSeatSelection: ( seat: number, price: number|undefined) => void;
+  seat: number;
+  seats?: seatsObjectProps;
+  columnNo?: string;
+  isBooked?: boolean;
+  price?: number | undefined;
 };
 
 export type seatLayoutProps = {
@@ -30,7 +33,7 @@ export type seatLayoutProps = {
     selectedRow: number,
     selectedColumn: string,
     selectedSeatNo: number,
-    seatPrice?: number | undefined
+    seatPrice?: number
   ) => void;
   row: number;
   seats: any;
@@ -64,8 +67,8 @@ export type selectedSeatProps = {
 };
 
 export type selectedSeatTypes = {
-  seatPrice?: number | undefined;
-  selectedSeatNo?: number | undefined;
+  price?: number | undefined;
+  seatNo?: number | undefined;
   helperText?: string;
 };
 

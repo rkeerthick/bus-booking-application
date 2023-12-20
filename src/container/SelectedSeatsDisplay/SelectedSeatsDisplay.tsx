@@ -26,15 +26,16 @@ const SelectedSeatsDisplay = ({
             {selectedSeats.length === 0 ? (
               <SelectedSeat helperText="Please book your seat" />
             ) : (
-              selectedSeats.map((data: selectedSeatTypes) => {
-                calculateTotal(data.seatPrice);
+                selectedSeats.map((data: selectedSeatTypes) => {
+                calculateTotal(data.price);
                 return (
                   <SelectedSeat
-                    seatPrice={data.seatPrice}
-                    selectedSeatNo={data.selectedSeatNo}
+                    price={data.price}
+                    seatNo={data.seatNo}
                   />
                 );
-              })
+              }
+              )
             )}
           </div>
           {selectedSeats.length !== 0 && (

@@ -41,7 +41,6 @@ const HomeSearch = () => {
     navigate("/displayBuses");
     
   }
-  console.log(data?.data);
 
   return (
     <div className="home-search">

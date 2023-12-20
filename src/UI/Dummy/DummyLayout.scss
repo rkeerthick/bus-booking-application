@@ -1,0 +1,14 @@
+.bus-layout {
+    width: 350px;
+    border: 2px solid black;
+    border-radius: 18px 18px 4px 4px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px 10px;
+}
+
+.walk-way {
+    width: 40px;
+}
