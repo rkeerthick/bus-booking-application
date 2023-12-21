@@ -1,24 +1,51 @@
 import React from "react";
 import "./BusCard.scss";
 import { useNavigate } from "react-router-dom";
+import SelectedBusStore from '../../store/selectedBusStore'
+import { observer } from "mobx-react-lite";
 
-const BusCard = ({
+export type busCardProps = {
+  boardingPoint: string;
+  endPoint: string;
+  startTime: string;
+  endTime: string;
+  busName: string;
+  availableSeats: number;
+  id: string;
+  seatType: string
+};
+
+const BusCard = observer(({
   boardingPoint,
   endPoint,
   startTime,
   endTime,
-  name,
+  busName,
   availableSeats,
   id,
-}: any) => {
+  seatType
+}: busCardProps) => {
   const navigate = useNavigate();
 
   return (
-    <div className="bus-card" onClick={() => navigate("/busLayout")}>
+    <div
+      className="bus-card"
+      onClick={() => {
+        SelectedBusStore.busDetails = {
+          id,
+          busName,
+          availableSeats,
+          seatType,
+          startTime,
+          endTime
+        };
+        navigate("/busLayout");
+      }}
+    >
       <div className="bus-card__container">
         <div className="bus-card__container__left">
           <div className="bus-name-container">
-            <span className="bus-name">Travel Name : {name}</span>
+            <span className="bus-name">Travel Name : {busName}</span>
           </div>
           <span className="from-place">{boardingPoint}</span>
           <span className="departure-time">{startTime}</span>
@@ -34,6 +61,6 @@ const BusCard = ({
       </div>
     </div>
   );
-};
+})
 
 export default BusCard;

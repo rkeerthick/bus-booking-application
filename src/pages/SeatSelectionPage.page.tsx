@@ -1,11 +1,6 @@
 import "./SeatSelectionPage.scss";
 import SelectedSeatsDisplay from "../container/SelectedSeatsDisplay/SelectedSeatsDisplay";
-import { useEffect, useState } from "react";
-import { columnProps, selectedSeatTypeProps } from "../Types/types";
-import { fetchBuses } from "../apis/apis";
-import { useQuery } from "@tanstack/react-query";
-import allBus from "../store/allBusesStore";
-import { toJS } from "mobx";
+import { useState } from "react";
 import { observer } from "mobx-react-lite";
 import DummyLayout from "../UI/Dummy/DummyLayout";
 
@@ -14,7 +9,6 @@ const SeatSelectionPage = observer(() => {
   // const [selectedSeat, setSelectedSeat] = useState<selectedSeatTypeProps[]>([]);
 
   const [selectedSeats, setSelectedSeats] = useState<any>([]);
-
   const rows = [
     [
       [1, 2, 0, 3, 4],

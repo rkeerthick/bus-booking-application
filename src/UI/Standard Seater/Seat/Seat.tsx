@@ -1,7 +1,18 @@
 import { seatProps } from "../../../Types/types";
 import "./Seat.scss";
+import UserStore from "../../../store/userStore";
 
-const Seat = ({ seat, isBooked, price, handleSeatSelection }: seatProps) => {
+const Seat = ({
+  seat,
+  isBooked,
+  price,
+  handleSeatSelection,
+  layout,
+}: seatProps) => {
+  const handleClick = (seat: number, price: number | undefined) => {
+    UserStore.userDetails.bookedSeats.push(layout);
+    handleSeatSelection(seat, price);
+  };
   return (
     // <div
     //   className={seats.isBooked ? "booked" : ""}
@@ -11,7 +22,7 @@ const Seat = ({ seat, isBooked, price, handleSeatSelection }: seatProps) => {
 
     <div
       className={isBooked ? "booked" : ""}
-      onClick={() => handleSeatSelection(seat, price)}
+      onClick={() => handleClick(seat, price)}
       id="seat"
     >
       {seat}

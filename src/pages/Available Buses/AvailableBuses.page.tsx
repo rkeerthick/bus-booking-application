@@ -42,12 +42,13 @@ const AvailableBuses = () => {
             return (
               <BusCard
                 key={index}
+                seatType={bus.seat.seatType}
                 id={bus.id}
                 boardingPoint={expectedData[0].boardingPoint}
                 endPoint={expectedData[0].endPoint}
                 startTime={startTime}
                 endTime={endTime}
-                name={bus.name}
+                busName={bus.name}
                 availableSeats={bus.totalSeats}
               />
             );

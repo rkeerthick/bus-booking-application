@@ -10,8 +10,8 @@ const HomeSearch = () => {
   useEffect(() => {
     localStorage.clear();
   })
-  const [fromPlace, setFromPlace] = useState("");
-  const [toPlace, setToPlace] = useState("");
+  const [fromPlace, setFromPlace] = useState("KanniyaKumari");
+  const [toPlace, setToPlace] = useState("Tirupur");
   const [bookingDate, setBookingDate] = useState(new Date());
 
   const navigate = useNavigate();

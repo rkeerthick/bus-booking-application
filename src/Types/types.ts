@@ -26,6 +26,7 @@ export type seatProps = {
   columnNo?: string;
   isBooked?: boolean;
   price?: number | undefined;
+  layout: string;
 };
 
 export type seatLayoutProps = {
