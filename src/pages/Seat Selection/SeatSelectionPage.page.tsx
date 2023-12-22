@@ -1,11 +1,12 @@
 import "./SeatSelectionPage.scss";
-import SelectedSeatsDisplay from "../container/SelectedSeatsDisplay/SelectedSeatsDisplay";
+import SelectedSeatsDisplay from "../../container/SelectedSeatsDisplay/SelectedSeatsDisplay";
 import { useState } from "react";
 import { observer } from "mobx-react-lite";
-import DummyLayout from "../UI/Dummy/DummyLayout";
+import DummyLayout from "../../UI/Dummy/DummyLayout";
 
 const SeatSelectionPage = observer(() => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const isOpen = false;
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
   // const [selectedSeat, setSelectedSeat] = useState<selectedSeatTypeProps[]>([]);
 
   const [selectedSeats, setSelectedSeats] = useState<any>([]);

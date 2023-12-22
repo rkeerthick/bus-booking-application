@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import Header from '../components/Header/Header'
-import HomePage from '../container/HomePage.container'
+import Header from '../../components/Header/Header'
+import HomePage from '../../container/HomePage.container'
 import { useQuery } from '@tanstack/react-query';
-import { fetchBuses } from '../apis/apis';
-import allBus from '../store/allBusesStore';
+import { fetchBuses } from '../../apis/apis';
+import allBus from '../../store/allBusesStore';
 import { observer } from 'mobx-react-lite';
-import UserDetails from '../store/userStore';
+import UserDetails from '../../store/userStore';
 
 const Home = observer(() => {
   useEffect(() => {

@@ -1,0 +1,54 @@
+.passenger-form {
+    width: 900px;
+    max-width: 1200px;
+    min-width: 500px;
+    background-color: #b1b1b1;
+    margin: auto;
+    height: max-content;
+    padding: 30px 0px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    &__seat-no {
+        border: 2px solid red;
+        border-radius: 8px;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        &__name, &__age {
+            border: none;
+            border-bottom: 2px solid black;
+            outline: none;
+            background: transparent;
+            color: #0e0d0d;
+            font-size: 18px;
+            padding: 5px 15px;
+            margin-bottom: 10px;
+        }
+
+        &__gender {
+            border: none;
+            border-bottom: 2px solid black;
+            outline: none;
+            background: transparent;
+            color: rgb(14, 13, 13);
+            font-size: 18px;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+
+            option {
+                background: transparent;
+            }
+        }
+    }
+}

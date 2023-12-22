@@ -40,7 +40,7 @@ const HomeSearch = () => {
   //   });
   // };
 
-  const { data, refetch } = useQuery({
+  const { refetch } = useQuery({
     queryKey: ["specific bus"],
     queryFn: () => fetchSpecificBus(fromPlace, toPlace),
   });
