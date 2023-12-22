@@ -9,7 +9,8 @@ import UserDetails from '../../store/userStore';
 
 const Home = observer(() => {
   useEffect(() => {
-    UserDetails.userDetails.bookedSeats = [];
+    UserDetails.userDetails.bookedSeatsIndex = [];
+    UserDetails.userDetails.bookedSeats = []
   }, [])
     const { data: allBuses } = useQuery({
       queryKey: ["all buses"],

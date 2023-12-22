@@ -3,6 +3,7 @@ import SelectedSeat from "../../components/SelectedSeat/SelectedSeat";
 import { selectedSeatProps, selectedSeatTypes } from "../../Types/types";
 import Modal from "../../modal/Modal";
 import MaximumCountModal from "../../components/MaximuxCountModal/MaximumCountModal";
+import { useNavigate } from "react-router-dom";
 
 const SelectedSeatsDisplay = ({
   selectedSeats,
@@ -10,9 +11,14 @@ const SelectedSeatsDisplay = ({
   closeModal,
 }: selectedSeatProps) => {
   let totalPrice: number = 0;
+  const navigate = useNavigate();
 
   const calculateTotal = (price: number | undefined) => {
     price && (totalPrice += price);
+  };
+
+  const handleClick = () => {
+    navigate("/addPassenger");
   };
 
   return (
@@ -26,20 +32,17 @@ const SelectedSeatsDisplay = ({
             {selectedSeats.length === 0 ? (
               <SelectedSeat helperText="Please book your seat" />
             ) : (
-                selectedSeats.map((data: selectedSeatTypes) => {
+              selectedSeats.map((data: selectedSeatTypes) => {
                 calculateTotal(data.price);
-                return (
-                  <SelectedSeat
-                    price={data.price}
-                    seatNo={data.seatNo}
-                  />
-                );
-              }
-              )
+                return <SelectedSeat price={data.price} seatNo={data.seatNo} />;
+              })
             )}
           </div>
           {selectedSeats.length !== 0 && (
-            <div className="selected-seat-display__container__total-cost">
+            <div
+              className="selected-seat-display__container__total-cost"
+              onClick={handleClick}
+            >
               Total Price : ₹{totalPrice}
             </div>
           )}

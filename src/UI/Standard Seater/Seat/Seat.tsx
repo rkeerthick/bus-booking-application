@@ -10,7 +10,10 @@ const Seat = ({
   layout,
 }: seatProps) => {
   const handleClick = (seat: number, price: number | undefined) => {
-    UserStore.userDetails.bookedSeats.push(layout);
+    UserStore.userDetails.bookedSeatsIndex.push({
+      seatIndex: `${layout}-${seat}`,
+      seatNo: seat,
+    });
     handleSeatSelection(seat, price);
   };
   return (

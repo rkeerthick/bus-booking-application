@@ -1,9 +1,9 @@
 import React from "react";
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home/Home.page";
 import AvailableBuses from "../pages/Available Buses/AvailableBuses.page";
-import BusLayout from "../UI/Standard Seater/Bus Layout/BusLayout";
 import SeatSelectionPage from "../pages/Seat Selection/SeatSelectionPage.page";
+import PassengerDetailsFilling from "../pages/Passenger Details Filling/PassengerDetailsFilling.page";
 
 const Routing = () => {
   return (
@@ -12,6 +12,7 @@ const Routing = () => {
         <Route path="/" element={<Home />} />
         <Route path="/displayBuses" element={<AvailableBuses />}  />
         <Route path="/busLayout" element={<SeatSelectionPage />} />
+        <Route path="/addPassenger" element={<PassengerDetailsFilling />} />
       </Routes>
     </BrowserRouter>
   );
